@@ -1,0 +1,63 @@
+library("faraway")
+install.packages("faraway")
+data(gala)
+summary(gala)
+head(gala)
+nrow(gala)
+
+model <- lm(Species ~ Area + Elevation + Nearest + Scruz + Adjacent, data = gala)
+summary(model)
+X <- model.matrix(model)
+y <- gala$Species
+t(X)
+# obliczenie estymatora
+beta_hat <- solve(t(X) %*% X) %*% t(X) %*% y
+beta_hat# obliczenie wektora prognoz
+y_hat <- X %*% beta_hat # obliczenie R-squared
+R2 <- 1 - sum((y - y_hat)^2) / sum((y - mean(y))^2)
+R2# obliczenie wektora residuów
+residuals <- y - y_hat # wykres residuów
+plot(residuals, xlab = "Numer obserwacji", ylab = "Residuały", main = "Wykres residuów")
+
+
+Dane2 <- prostate
+summary(Dane2)
+Dane2$svi = as.character(Dane2$svi)
+plot(Dane2$lpsa~Dane2$lcavol)
+model21<-lm(lpsa~lcavol, data=Dane2)
+coef21<-model21$coefficients
+mash <- seq(-2, 4, by=0.1)
+pred21=mash*coef21[2]+coef21[1]
+lines(mash, pred21, col="red")
+model22<-lm(lcavol~lpsa, data=Dane2)
+coef22<-model22$coefficients
+mash2 <- seq(0, 5, by=0.1)
+pred22=mash2*coef22[2]+coef22[1]
+lines(pred22, mash2, col="blue")
+(coef21[1]+(coef22[1]/coef22[2]))/((1/coef22[2])-coef21[2])
+coef21[1]+coef21[2]*(coef21[1]+(coef22[1]/coef22[2]))/((1/coef22[2])-coef21[2])
+summary(model21)
+summary(model22)
+
+model3 <- lm(lpsa~lcavol, data=Dane2)
+Rsq_3 <- summary(model3)$r.squared
+Rsq_3
+RSS_3 <- sum(model3$residuals %*% model3$residuals)
+RSS_3
+model3_1 <-lm(lpsa~lcavol+lweight, data=Dane2)
+model3_2 <-lm(lpsa~lcavol+lweight+lbph, data=Dane2)
+model3_3 <-lm(lpsa~lcavol+lweight+lbph+age, data=Dane2)
+model3_4 <-lm(lpsa~lcavol+lweight+lbph+age+lcp, data=Dane2)
+Rsq_3_1 <- summary(model3_1)$r.squared
+RSS_3_1 <- sum(model3_1$residuals %*% model3_1$residuals)
+Rsq_3_2 <- summary(model3_2)$r.squared
+RSS_3_2 <- sum(model3_2$residuals %*% model3_2$residuals)
+Rsq_3_3 <- summary(model3_3)$r.squared
+RSS_3_3 <- sum(model3_3$residuals %*% model3_3$residuals)
+Rsq_3_4 <- summary(model3_4)$r.squared
+RSS_3_4 <- sum(model3_4$residuals %*% model3_4$residuals)
+print(c(Rsq_3_1, Rsq_3_2, Rsq_3_3, Rsq_3_4))
+print(c(RSS_3_1, RSS_3_2, RSS_3_3, RSS_3_4))
+df =data.frame("lcavol"=1.44692,"lweight"=3.62301,"age"=65,"lbph"=0.30010,
+               "svi"=0,"lcp"=0.79851,"gleason"=7, "pgg45"=15)
+predict(model3_4, df, interval="confidence", level=0.95)
