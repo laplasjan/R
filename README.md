@@ -32,7 +32,7 @@ b) Q-Q sprawdzenie normalności i empirycznej dystrybuanty, która okazuje się 
 c) sprawdzenie homeoskatyczności:  gdy czerwona linia jest ustalona horyzontalnie możemy mówić o równej wariancji. Z rysunku wynika, że mają na model ogromny wpływ wartości większe. \
 d) Cook's distance a więc badanie wpływu poszczególnych obserwacji i ich istotności. Jest kilka niezbyt wysokich dźwigni i ogólnie dźwignie nie są wysokie. \
 e) Residua vs dźwignie: badanie wpływu poszczególnych obserwacji na model. Widzimy wyraźny wpływ wartości odstających.Czerwona linia jest niemal horyzontalna. \
-f) zbiorczy wykres dystansu Cook'a a dźwigni. WIdzimy, że najlepszy model uzyskalibyśmy dla wartości bliskich 0. \
+f) zbiorczy wykres dystansu Cook'a a dźwigni. WIdzimy, że najlepszy model uzyskalibyśmy dla wartości bliskich 0. 
 # Model poprawiony:
 
 Usunięto wartości odstające, co poprawiło jakość dopasowania i zmniejszyło wpływ niepotrzebnych obserwacji.
