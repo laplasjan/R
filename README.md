@@ -1,5 +1,5 @@
 # izotopyO16-regresja
-#Cel pracy:
+# Cel pracy:
 Celem niniejszej pracy jest zbadanie liniowej zależności między temperaturą powierzchni Grenlandii a stężeniami stabilnych izotopów tlenu, oznaczanymi jako δ^18 O. 
 Analiza ta ma na celu wsparcie badań nad oszacowaniem wieku lodu na Grenlandii, co jest istotne z punktu widzenia paleoklimatologii.
 
