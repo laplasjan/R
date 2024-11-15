@@ -24,8 +24,15 @@ Po oczyszczeniu danych wykorzystano 568 obserwacji.
 - Model początkowy Uwzględniał wszystkie dostępne zmienne.
 - Wartości odstające znacząco wpływały na wyniki, co zmniejszyło dopasowanie modelu.
 - Istotność modelu została potwierdzona na poziomie 0.05 (p-value < 2⋅10−162⋅10 −16), jednak wpływ wartości odstających zniekształcał wyniki.
+  \
 ![Logo](wykresy.jpg)
-
+\
+a) wpływowe obserwacje są zaznaczone poza dystansem Cooka zaznaczonego na czerwono. Widzimy wyraźnie, że im większe wartości, tym większy mają wpływ na model. \
+b) Q-Q sprawdzenie normalności i empirycznej dystrybuanty, która okazuje się być jeszcze bliższa dystrybuancie rozkładu normalnego. \
+c) sprawdzenie homeoskatyczności:  gdy czerwona linia jest ustalona horyzontalnie możemy mówić o równej wariancji. Z rysunku wynika, że mają na model ogromny wpływ wartości większe. \
+d) Cook's distance a więc badanie wpływu poszczególnych obserwacji i ich istotności. Jest kilka niezbyt wysokich dźwigni i ogólnie dźwignie nie są wysokie. \
+e) Residua vs dźwignie: badanie wpływu poszczególnych obserwacji na model. Widzimy wyraźny wpływ wartości odstających.Czerwona linia jest niemal horyzontalna. \
+f) zbiorczy wykres dystansu Cook'a a dźwigni. WIdzimy, że najlepszy model uzyskalibyśmy dla wartości bliskich 0. \
 # Model poprawiony:
 
 Usunięto wartości odstające, co poprawiło jakość dopasowania i zmniejszyło wpływ niepotrzebnych obserwacji.
