@@ -24,6 +24,7 @@ Po oczyszczeniu danych wykorzystano 568 obserwacji.
 - Model początkowy Uwzględniał wszystkie dostępne zmienne.
 - Wartości odstające znacząco wpływały na wyniki, co zmniejszyło dopasowanie modelu.
 - Istotność modelu została potwierdzona na poziomie 0.05 (p-value < 2⋅10−162⋅10 −16), jednak wpływ wartości odstających zniekształcał wyniki.
+![Logo](wykresy.jpg)
 
 # Model poprawiony:
 
