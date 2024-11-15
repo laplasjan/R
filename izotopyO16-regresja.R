@@ -1,5 +1,5 @@
 # Œcie¿ka do pliku
-path <- "C:/Users/jmich/Documents/zaliczenie ekonometria/daneostateczne.csv"
+path <- "C:/Users/jmich/Documents/zaliczenie ekonometria/data.csv"
 
 # Wczytanie danych
 dane <- read.csv(path, header = FALSE, sep = ",")
